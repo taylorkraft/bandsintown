@@ -1,6 +1,6 @@
 # Bandsintown
 
-This Ruby gem provides a CLI to view a list of bands playing shows in your area. Enter your zipcode to see a list of artists and venues near you!
+This Ruby gem provides a CLI to view a list of bands playing shows at venues in your area.
 
 ## Installation
 
@@ -8,7 +8,7 @@ $ gem install bandsintown
 
 ## Usage
 
-TODO: Write usage instructions here
+Enter your zipcode to view a list of bands playing shows at venues in your area.
 
 ## Development
 
