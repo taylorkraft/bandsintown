@@ -4,5 +4,6 @@
 require 'nokogiri'
 require 'open-uri'
 
+require_relative './bandsintown/scraper'
 require_relative './bandsintown/version'
 require_relative './bandsintown/cli'

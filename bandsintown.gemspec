@@ -5,7 +5,7 @@ require "bandsintown/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "bandsintown"
-  spec.version       = Bandsintown::VERSION
+  spec.version       = BandsInTown::VERSION
   spec.authors       = ["'Taylor Kraft'"]
   spec.email         = ["'taylorkraft16@gmail.com'"]
 

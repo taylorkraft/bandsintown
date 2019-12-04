@@ -1,8 +1,9 @@
 # This class is my CLI controller, responsible for user interactions
 
-class Bandsintown::CLI 
+class BandsInTown::CLI 
   
-  def call
+  def run
+    # Scraper.scrape_bands 
     area
     list_bands
     show_details
@@ -12,7 +13,7 @@ class Bandsintown::CLI
   
   def area
     puts "Enter your City or Location to view a list of bands playing shows in your area:"
-    input = gets.strip      # gets returns a string object read from standard input, strip will remove any whitespace
+    input = gets.strip.to_i # gets returns a string object read from standard input, strip will remove any whitespace
   end 
   
   def list_bands
