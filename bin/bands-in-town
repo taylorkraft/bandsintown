@@ -1,9 +1,8 @@
 #!/usr/bin/env ruby
 
-require './lib/bandsintown.rb'
-# This is loading my main file
+require './lib/bandsintown.rb'      # This is loading my main file
 
-Bandsintown::CLI.new.call
+Bandsintown::CLI.new.call     
 
 # instansiate the CLI class and use the call method to start the program
 # All code is incapsulated in the module Bandsintown::CLI that I am calling above

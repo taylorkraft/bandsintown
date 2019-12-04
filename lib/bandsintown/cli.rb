@@ -3,14 +3,15 @@
 class Bandsintown::CLI 
   
   def call
-    menu
+    area
     list_bands
+    show_details
   end
   
   # any method within my call method will be instantiated upon initialization
   
-  def menu
-    puts "Enter your city or location to view a list of bands playing shows in your area:"
+  def area
+    puts "Enter your City or Location to view a list of bands playing shows in your area:"
     input = gets.strip      # gets returns a string object read from standard input, strip will remove any whitespace
   end 
   
@@ -24,8 +25,10 @@ class Bandsintown::CLI
   end
   
   
-  def venue
-    
+  def show_details
+    puts "Choose a number to view the date and venue location of the show:"
+    input = gets.strip
+    puts "Great choice!"
   end 
   
 end
