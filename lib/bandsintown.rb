@@ -1,4 +1,4 @@
 require "bandsintown/version"
 
-module Bandsintown
+module BandsInTown
 end

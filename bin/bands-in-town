@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+BandsInTown::CLI.new.call
+
+# instansiate the CLI class and use the call method to start the program
