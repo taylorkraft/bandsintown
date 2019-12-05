@@ -15,8 +15,6 @@ class BandsInTown::CLI
     show_details
     # a user can select a number to view details about the show like venue name and address, event date and time, and where to buy tickets
     
-    #valid_input?
-    # checks to make sure the user input is a number between 1 and the size of the array of bands returned
   end
   
   # any method within my run method will be instantiated upon running the program
@@ -29,13 +27,6 @@ class BandsInTown::CLI
     # strip will remove any whitespaces
     
     # not sure how to check if input is valid here because it is a string not an integer
-  end
-  
-  def valid_input?(input)
-    # check to see if input is between 1 and the number of bands returned based on user input
-   until valid_input.between?(1, Band.all.size)
-    puts "Sorry, Not a Valid Choice. Choose 1 - #{Band.all.size}"
-   end
   end
   
   def list_bands
@@ -55,13 +46,20 @@ class BandsInTown::CLI
     puts "Choose a Number to View Event Info:"
     input = gets.strip.to_i
     # i want to scrape here to return the show details of the number selected if it is a valid input
-    # if valid.input?(input)
+    # if valid_input?(input)
     puts "Great Choice!"
     # else
-    #  puts "Sorry, not a valid location. "
+    #  puts "Sorry, not a valid Choice."
     # end
   end 
   
-  # i wnat a loop of some sort so the program doesn't exit until being asked to
+  # i want a loop of some sort so the program doesn't exit until being asked to
+  
+   def valid_input?(input)
+    # check to see if input is between 1 and the number of bands returned based on user input
+   until valid_input.between?(1, Band.all.size)
+    puts "Sorry, Not a Valid Choice. Choose 1 - #{Band.all.size}"
+   end
+  end
   
 end
