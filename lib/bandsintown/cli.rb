@@ -44,7 +44,7 @@ class BandsInTown::CLI
   
   def show_details
     # prompt user to enter a number associated with a band or an artist
-    puts "Choose a number to view more details about that show:"
+    puts "Choose a number to view Event Info:"
     input = gets.strip.to_i
     # return the show details of the number selected if it is a valid input
     # if valid.input?(input)
