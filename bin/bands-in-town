@@ -2,9 +2,9 @@
 
 require './lib/bandsintown.rb'      
 
-# This is loading my main file(environment)
+# this is loading my main file(environment)
 
 BandsInTown::CLI.new.run    
 
-# Instansiate the CLI class and use the call method to start the program
-# All code is incapsulated in the module Bandsintown::CLI that I am calling above
+# instansiate the CLI class and use the call method to start the program
+# all code is incapsulated in the module BandsInTown::CLI that i am calling above

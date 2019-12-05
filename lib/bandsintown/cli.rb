@@ -1,4 +1,4 @@
-# This class is my CLI controller, responsible for user interactions
+# this class is my CLI controller, responsible for user interactions
 
 class BandsInTown::CLI 
   
@@ -8,27 +8,35 @@ class BandsInTown::CLI
     get_location  
     # the program with take in the user input
     
+    
     list_bands  
     # a numbered list of bands playing shows at the location input by the user is returned
     
     show_details
-    # a user can select a number to view details about the show like date, doors/show time, price, where to buy tickets, and venue
+    # a user can select a number to view details about the show like venue name and address, event date and time, and where to buy tickets
+    
+    #valid_input?
+    # checks to make sure the user input is a number between 1 and the size of the array of bands returned
   end
   
-  # any method within my call method will be instantiated upon running the program
+  # any method within my run method will be instantiated upon running the program
   
   def get_location
-    puts "Enter your City or Location to view a list of bands playing shows in your area:"
+    puts "Enter your City or Location to View a List of Events Near You:"
     input = gets.strip.to_i 
-    # I want a user to enter the name of their city, or allow the computer access to their location to view the bands playing shows in their area
+    # user enters the name of their city, or allow the computer access to their location to view the bands playing shows in their area
     # gets returns a string object read from standard input
     # strip will remove any whitespaces
+    
+    # not sure how to check if input is valid here because it is a string not an integer
   end
   
-  # def valid.input?(input)
+  def valid_input?(input)
     # check to see if input is between 1 and the number of bands returned based on user input
-    # input.between?(1, Bands.all.size) (I still need to create a Bands class)
-  # end
+   until valid_input.between?(1, Band.all.size)
+    puts "Sorry, Not a Valid Choice. Choose 1 - #{Band.all.size}"
+   end
+  end
   
   def list_bands
     puts "Events Near You:"
@@ -44,14 +52,16 @@ class BandsInTown::CLI
   
   def show_details
     # prompt user to enter a number associated with a band or an artist
-    puts "Choose a number to view Event Info:"
+    puts "Choose a Number to View Event Info:"
     input = gets.strip.to_i
-    # return the show details of the number selected if it is a valid input
+    # i want to scrape here to return the show details of the number selected if it is a valid input
     # if valid.input?(input)
-    puts "Great choice!"
+    puts "Great Choice!"
     # else
-    #  puts "Sorry, not a valid choice!"
+    #  puts "Sorry, not a valid location. "
     # end
   end 
+  
+  # i wnat a loop of some sort so the program doesn't exit until being asked to
   
 end

@@ -1,5 +1,5 @@
 class Band
-  
+  attr_accessor :name
   @@all = []
   
   def initialize(name)
