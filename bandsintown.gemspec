@@ -1,17 +1,17 @@
-require_relative '.lib/bandintown/version.rb'
+require_relative '.lib/songkick/version.rb'
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "bandsintown/version"
+require "songkick/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "bandsintown"
-  spec.version       = BandsInTown::VERSION
+  spec.name          = "songkick"
+  spec.version       = SongKick::VERSION
   spec.authors       = ["'Taylor Kraft'"]
   spec.email         = ["'taylorkraft16@gmail.com'"]
 
-  spec.summary       = "Bands in town"
-  spec.description   = "Provides a list of bands playing at venues in your area"
-  spec.homepage      = "https://www.bandsintown.com/"
+  spec.summary       = "Songkick"
+  spec.description   = "Provides a list of bands playing at venues in select areas"
+  spec.homepage      = "https://www.songkick.com/"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

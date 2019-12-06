@@ -1,6 +1,6 @@
 # this class is my CLI controller, responsible for user interactions
 
-class BandsInTown::CLI 
+class SongKick::CLI 
   
   def run
     # Scraper.scrape_bands to have my program scrape all of the bands associated with the site

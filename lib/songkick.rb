@@ -4,6 +4,6 @@
 require 'nokogiri'
 require 'open-uri'
 
-require_relative './bandsintown/scraper'
-require_relative './bandsintown/version'
-require_relative './bandsintown/cli'
+require_relative './songkick/scraper'
+require_relative './songkick/version'
+require_relative './songkick/cli'

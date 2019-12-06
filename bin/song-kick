@@ -1,10 +1,10 @@
 #!/usr/bin/env ruby
 
-require './lib/bandsintown.rb'      
+require './lib/songkick.rb'      
 
 # this is loading my main file(environment)
 
-BandsInTown::CLI.new.run    
+SongKick::CLI.new.run    
 
 # instansiate the CLI class and use the call method to start the program
 # all code is incapsulated in the module BandsInTown::CLI that i am calling above
