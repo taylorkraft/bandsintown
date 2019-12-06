@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["'Taylor Kraft'"]
   spec.email         = ["'taylorkraft16@gmail.com'"]
 
-  spec.summary       = "Songkick"
-  spec.description   = "Provides a list of bands playing at venues in select areas"
-  spec.homepage      = "https://www.songkick.com/"
+  spec.summary       = "Bands in town"
+  spec.description   = "Provides a list of bands playing at venues in Denver, CO"
+  spec.homepage      = "https://www.songkick.com/metro-areas/6404-us-denver"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'

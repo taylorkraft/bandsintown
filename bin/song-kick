@@ -6,5 +6,5 @@ require './lib/songkick.rb'
 
 SongKick::CLI.new.run    
 
-# instansiate the CLI class and use the call method to start the program
+# instansiate the CLI class and use the run method to start the program
 # all code is incapsulated in the module BandsInTown::CLI that i am calling above

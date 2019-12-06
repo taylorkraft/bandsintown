@@ -9,9 +9,6 @@ class SongKick::CLI
     # the program with take in the user input
     
     
-    list_bands  
-    # a numbered list of bands playing shows at the location input by the user is returned
-    
     show_details
     # a user can select a number to view details about the show like venue name and address, event date and time, and where to buy tickets
     
@@ -21,21 +18,15 @@ class SongKick::CLI
   
   def get_location
     puts "Choose a number to select a city:"
+    puts <<-DOC     
+      1. Denver, CO, US 
+      2. SF Bay Area, CA, US
+      3. Portland, OR, US
+    DOC
     input = gets.strip.to_i 
-    # user enters the name of their city, or allow the computer access to their location to view the bands playing shows in their area
+    # user enters the number that corresponds with the city they'd like to view shows in
     # gets returns a string object read from standard input
     # strip will remove any whitespaces
-  end
-  
-  def list_bands
-    puts "Events Near You:"
-    puts <<-DOC     
-      1. Billie Eilish  
-      2. Post Malone
-      3. Galantis
-    DOC
-    # here doc allows me to specify a string as a block of text where new lines and indents are preserved
-    # in between the DOCs is where I want to see a returned list of bands playing shows in the area of the location input by the user
   end
   
   

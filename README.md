@@ -1,6 +1,6 @@
 # Bandsintown
 
-This Ruby gem provides a CLI to view a list of bands playing shows at venues in select areas.
+This Ruby gem provides a CLI to view a list of bands playing shows in Denver, Colorado.
 
 ## Installation
 
