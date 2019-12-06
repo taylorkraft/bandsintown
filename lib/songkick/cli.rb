@@ -6,7 +6,8 @@ class SongKick::CLI
    # site = "https://www.songkick.com/metro-areas/6404-us-denver"
    # html = open(site)
    # doc = Nokogiri::HTML(html)
-   # Scraper.scrape_bands to have my program scrape all of the bands associated with the site
+   # Scraper.scrape_denver to have my program scrape all of the bands associated with the site
+   #the code above is encapsulated in a method in the scraper class called scrape_denver
     choose_event  
    
     
@@ -17,7 +18,7 @@ class SongKick::CLI
     # user enters the number that corresponds with the show they'd like to view more info about
     input = gets.strip.to_i 
     # gets returns a string object read from standard input
-    # to_i will convert the string object to an integer)
+    # to_i will convert the string object to an integer
     # strip will remove any whitespaces
     
     # i want to scrape here to return the show details of the number selected if it is a valid input
@@ -28,6 +29,12 @@ class SongKick::CLI
     # end
   end
   
+  def valid_input?(input)
+    # check to see if input is between 1 and the number of artists returned based on user input
+   until valid_input.between?(1, Artist.all.size)
+    puts "Sorry, not a valid choice. Choose 1 - #{Artist.all.size}"
+   end
+  end
   
   def buy_tickets
     puts "Choose a number to view ticket pricing and availability from that site:"
@@ -37,11 +44,6 @@ class SongKick::CLI
   
   # i want a loop of some sort so the program doesn't exit until being asked to
   
-   def valid_input?(input)
-    # check to see if input is between 1 and the number of artists returned based on user input
-   until valid_input.between?(1, Artist.all.size)
-    puts "Sorry, not a valid choice. Choose 1 - #{Artist.all.size}"
-   end
-  end
+   
   
 end
