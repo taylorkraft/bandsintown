@@ -2,7 +2,8 @@
 
 require './lib/songkick.rb'      
 
-# this is loading my main file(environment)
+# this is loading my main file(environment) they need to communicate in order to run the program
+# this is my exectuable file
 
 SongKick::CLI.new.run    
 
