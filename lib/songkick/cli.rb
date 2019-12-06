@@ -6,7 +6,7 @@ class SongKick::CLI
    # site = "https://www.songkick.com/metro-areas/6404-us-denver"
    # html = open(site)
    # doc = Nokogiri::HTML(html)
-   # Scraper.scrape_denver to have my program scrape all of the bands associated with the site
+   Scraper.scrape_denver # to have my program scrape all of the bands associated with the site
    #the code above is encapsulated in a method in the scraper class called scrape_denver
     choose_event  
    

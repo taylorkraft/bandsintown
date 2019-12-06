@@ -3,7 +3,7 @@ class Scraper
   def self.scrape_denver 
     site = "https://www.songkick.com/metro-areas/6404-us-denver" 
     html = open(site) # open method can open a file, allows me to open the site i've passed in
-    doc = Nokogir::HTML(html) # nokogiri is a reader parser, i am specifying HTML and passing in the site we just opened in order for nnokogiri to parse that site's html
+    doc = Nokogiri::HTML(html) # nokogiri is a reader parser, i am specifying HTML and passing in the site we just opened in order for nnokogiri to parse that site's html
     array_of_artists = doc.css("p.artists.summary") # i am now taking our parsed html and specifying the css selector where my artists names are held - within a <p> tag that holds an artists summary class - this returns an array with all of the information about the artists
     artist_names = array_of_artists.map do |section|
     section.css("strong").text
@@ -12,10 +12,10 @@ class Scraper
    end 
    
    puts "Concerts in Denver"
-   artist_names.each_with_index(1) do |i, name|
+   artist_names.each.with_index(1) do |name, i|
      puts "#{i}. #{name}"
    end
-   # i am iterating over artist_names using each_with_index to give each element an index number, and passing in 1 to begin the index at 1
+   # i am iterating over artist_names using each.with_index to give each element an index number, and passing in 1 to begin the index at 1
    # the result of this iteration will 'puts' out a list of artist names and a corresponding index number
    # i have interpolated index and name to allow for change when new artists are playing shows in denver
   end
