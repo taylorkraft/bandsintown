@@ -20,13 +20,11 @@ class SongKick::CLI
   # any method within my run method will be instantiated upon running the program
   
   def get_location
-    puts "Enter your City or Location to View a List of Events Near You:"
+    puts "Choose a number to select a city:"
     input = gets.strip.to_i 
     # user enters the name of their city, or allow the computer access to their location to view the bands playing shows in their area
     # gets returns a string object read from standard input
     # strip will remove any whitespaces
-    
-    # not sure how to check if input is valid here because it is a string not an integer
   end
   
   def list_bands
@@ -43,11 +41,11 @@ class SongKick::CLI
   
   def show_details
     # prompt user to enter a number associated with a band or an artist
-    puts "Choose a Number to View Event Info:"
+    puts "Choose a number to view event info:"
     input = gets.strip.to_i
     # i want to scrape here to return the show details of the number selected if it is a valid input
     # if valid_input?(input)
-    puts "Great Choice!"
+    puts "Great choice!"
     # else
     #  puts "Sorry, not a valid Choice."
     # end
@@ -58,7 +56,7 @@ class SongKick::CLI
    def valid_input?(input)
     # check to see if input is between 1 and the number of bands returned based on user input
    until valid_input.between?(1, Band.all.size)
-    puts "Sorry, Not a Valid Choice. Choose 1 - #{Band.all.size}"
+    puts "Sorry, not a valid choice. Choose 1 - #{Band.all.size}"
    end
   end
   
