@@ -11,7 +11,7 @@ class Scraper
     # text method will return just our artists names in an array, rather than an array with loads of other information
    end
 
-   puts "Concerts in Denver"
+   puts "These Artists are coming to Denver:"
    artist_names.each.with_index(1) do |name, i|
      puts "#{i}. #{name}"
    end

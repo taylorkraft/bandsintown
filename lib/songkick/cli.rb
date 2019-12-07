@@ -3,19 +3,16 @@
 class SongKick::CLI
 
   def run
-   # site = "https://www.songkick.com/metro-areas/6404-us-denver"
-   # html = open(site)
-   # doc = Nokogiri::HTML(html)
-   Scraper.scrape_denver # to have my program scrape all of the bands associated with the site
-   #the code above is encapsulated in a method in the scraper class called scrape_denver
+   display_events
    choose_event
+  end
 
-
-
+  def display_events
+    Scraper.scrape_denver
   end
 
   def choose_event
-    puts "Choose a number to view more details about that event:"
+    puts "Choose a number to view more details about an event:"
     # user enters the number that corresponds with the show they'd like to view more info about
     input = gets.strip.to_i
     # gets returns a string object read from standard input
