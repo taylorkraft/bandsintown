@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby
 
-require './lib/songkick.rb'      
+require './lib/songkick.rb'
 
 # this is loading my main file(environment) they need to communicate in order to run the program
 # this is my exectuable file
-
-SongKick::CLI.new.run    
+test = Scraper.new("/venues/9408-belly-up-aspen")
+binding.pry
+SongKick::CLI.new.run
 
 # instansiate the CLI class and use the run method to start the program
 # all code is incapsulated in the module BandsInTown::CLI that i am calling above

@@ -1,14 +1,15 @@
 # this class is my CLI controller, responsible for user interactions
 
 class SongKick::CLI
-
   def run
+    Scraper.new.scrape_denver
+   binding.pry
    display_events
    choose_event
   end
 
   def display_events
-    Scraper.scrape_denver
+    Artist.artist_name
   end
 
   def choose_event

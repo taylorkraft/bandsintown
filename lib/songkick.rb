@@ -8,6 +8,8 @@ require 'pry'
 require_relative './songkick/scraper'
 require_relative './songkick/version'
 require_relative './songkick/cli'
+require_relative './songkick/artist'
+require_relative './songkick/venue'
 
 # require_relative used for files required within my program
 # require used for gems installed locally on my computer
