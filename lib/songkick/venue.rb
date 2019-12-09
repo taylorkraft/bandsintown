@@ -1,5 +1,5 @@
 class Venue
-  attr_accessor :name, :address, :phone_number, :website
+  attr_accessor :name, :address, :phone_number, :website, :url, :zip
   @@all = []
 
     def initialize
@@ -17,10 +17,17 @@ class Venue
     end
 
   def venue_info
-    s = Scraper.new(@website)
+    s = Scraper.new(@url)
     # .css("div.venue-info-details") = class that holds venue info
-    # .css("a.url") = venue name
-    # .css("a").attribute("href").value = venue website
+    @address = s.doc.css("p.venue-hcard").css("span span")[0].text
+    self.zip = s.doc.css("p.venue-hcard").css("span span")[1].text
+    @website = s.doc.css("a.url").attribute("href").value
     # .css()
+    end
+
+    def show_details
+      puts "Venue: #{self.name}"
+      puts "Address: #{self.address}, #{self.zip}"
+      puts "Website: #{self.website}"
     end
 end

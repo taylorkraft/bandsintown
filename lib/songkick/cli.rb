@@ -4,6 +4,7 @@ class SongKick::CLI
 
   def run
     Scraper.new.scrape_denver
+    #binding.pry
     display_events
     get_event_details
   end
@@ -17,8 +18,12 @@ class SongKick::CLI
     input = gets.strip.to_i
     if valid_input?(input)
     puts "Great choice!"
+    v = Venue.all[input]
+    v.venue_info
+    v.show_details
     else
     puts "Sorry, not a valid choice. Choose 1 - #{Artist.all.size}"
+    get_event_details
    end
   end
 

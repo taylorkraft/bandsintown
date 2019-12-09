@@ -18,7 +18,7 @@ class Scraper
       listing.css("span.venue-name").each do |venue|
         @venue = Venue.new
         @venue.name = venue.css('a').text
-        @venue.website = venue.css("a").attribute("href").value
+        @venue.url = venue.css("a").attribute("href").value
       end
     end
   end
