@@ -4,7 +4,6 @@ class SongKick::CLI
 
   def run
     Scraper.new.scrape_denver
-    #binding.pry
     display_events
     get_event_details
   end
@@ -31,4 +30,3 @@ class SongKick::CLI
     input.between?(1, Artist.all.size)
   end
 end
-# i want a loop of some sort so the program doesn't exit until being asked to
