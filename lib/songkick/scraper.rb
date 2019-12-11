@@ -1,5 +1,5 @@
 class Scraper
-  attr_accessor :artist, :venue, :doc
+  attr_accessor :doc
 
   def initialize(tail = "/metro-areas/6404-us-denver")
     url = "https://www.songkick.com" + tail
@@ -10,15 +10,21 @@ class Scraper
     @doc.css("ul.event-listings").each do |listing|
 
       listing.css("p.artists.summary").each do |summary|
-        @artist = Artist.new
-        @artist.name =  summary.css("strong").text
+        artist = Artist.new
+        artist.name =  summary.css("strong").text
       end
 
       listing.css("span.venue-name").each do |venue|
-        @venue = Venue.new
-        @venue.name = venue.css('a').text
-        @venue.url = venue.css("a").attribute("href").value
+        v = Venue.new
+        v.name = venue.css('a').text
+        v.url = venue.css("a").attribute("href").value
       end
     end
+  end
+
+  def scrape_venues(venue)
+    venue.address = @doc.css("p.venue-hcard").css("span span")[0].text
+    venue.zip = @doc.css("p.venue-hcard").css("span span")[1].text
+    venue.website = @doc.css("a.url").attribute("href").value
   end
 end
