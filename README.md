@@ -8,7 +8,7 @@ $ gem install bandsintown
 
 ## Usage
 
-Enter a number that corresponds with a band to view information about their show(s).
+Enter a number that corresponds with a band to view information about their event.
 
 ## Development
 

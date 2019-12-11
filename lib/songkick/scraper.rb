@@ -1,5 +1,4 @@
 class Scraper
-
   attr_accessor :artist, :venue, :doc
 
   def initialize(tail = "/metro-areas/6404-us-denver")
