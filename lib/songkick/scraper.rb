@@ -9,18 +9,37 @@ class Scraper
   def scrape_denver
     @doc.css("ul.event-listings").each do |listing|
 
-      listing.css("p.artists.summary").each do |summary|
-        artist = Artist.new
-        artist.name =  summary.css("strong").text
-      end
-
       listing.css("span.venue-name").each do |venue|
         v = Venue.new
         v.name = venue.css('a').text
         v.url = venue.css("a").attribute("href").value
       end
+
+      listing.css("p.artists.summary").each.with_index do |summary, idx|
+        artist = Artist.new
+        artist.venue = Venue.all[idx]
+        artist.name =  summary.css("strong").text
+      end
     end
   end
+
+
+
+  # def scrape_denver
+  #   @doc.css("ul.event-listings").each do |listing|
+  #
+  #     listing.css("p.artists.summary").each do |summary|
+  #       artist = Artist.new
+  #       artist.name =  summary.css("strong").text
+  #     end
+  #
+  #     listing.css("span.venue-name").each do |venue|
+  #       v = Venue.new
+  #       v.name = venue.css('a').text
+  #       v.url = venue.css("a").attribute("href").value
+  #     end
+  #   end
+  # end
 
   def scrape_venues(venue)
     venue.address = @doc.css("p.venue-hcard").css("span span")[0].text
