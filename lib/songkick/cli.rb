@@ -29,7 +29,7 @@ class SongKick::CLI
 
   def display_venue_details(input)
     puts "Great Choice!"
-    v = Venue.all[input]
+    v = Venue.all[input-1]
     v.venue_info
     puts "Venue: #{v.name}"
     puts "Address: #{v.address}, #{v.zip}"
@@ -37,7 +37,7 @@ class SongKick::CLI
   end
 
   def goodbye
-    puts "Do you want to exit? Y/N"
+    puts "Do you want to exit? Type Y to exit, type any other character to continue."
     input = gets.strip.upcase
     if input == "Y"
       puts "Goodbye!"

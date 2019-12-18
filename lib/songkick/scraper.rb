@@ -25,6 +25,10 @@ class Scraper
   def scrape_venues(venue)
     venue.address = @doc.css("p.venue-hcard").css("span span")[0].text
     venue.zip = @doc.css("p.venue-hcard").css("span span")[1].text
-    venue.website = @doc.css("a.url").attribute("href").value
+    if @doc.css('a.url').attribute('href') == nil
+      venue.website = "https://www.songkick.com" + venue.url
+    else
+      venue.website = @doc.css("a.url").attribute("href").value
+    end
   end
 end
